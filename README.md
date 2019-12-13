@@ -2,7 +2,7 @@
 keepass2forjessie
 
 
-# tail -11 control
+- tail -11 control
 Description: Password manager
  repack on jessie without deps on libgcrypt20 (>= 1.8.0-0)
  with https://coderwall.com/p/hes3ha/change-the-dependencies-of-a-deb-package
@@ -15,7 +15,7 @@ Description: Password manager
  KeePass can import data from various file formats. The password list can be
  exported to various formats, including TXT, HTML, XML and CSV files.
 
-# head -11 control
+- head -11 control
 Package: keepass2
 Version: 2.43+dfsg-1
 Architecture: all
@@ -28,13 +28,13 @@ Section: utils
 Priority: optional
 Homepage: http://keepass.info/
 
-# howto done:
+- howto done:
 read https://coderwall.com/p/hes3ha/change-the-dependencies-of-a-deb-package
 download keepass2_2.43+dfsg-1_all.deb
 ar x keepass2_2.43+dfsg-1_all.deb
 tar -xf control.tar.xz
 vi control
-# remove "libgcrypt20 (>= 1.8.0-0)," per vi
+... remove "libgcrypt20 (>= 1.8.0-0)," per vi
 mv control.tar.xz control.org.tar.xz
 tar c md5sums control | xz > control.tar.xz
 ar rcs keepass2_2.43+dfsg-1_all_without_dep_on_libgcrypt20.1.8.0-0.deb debian-binary control.tar.xz data.tar.xz
